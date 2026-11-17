@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #f5f7fb;
+  color: #202632;
+  font-family: system-ui, -apple-system, 'PingFang SC', sans-serif;
+}
+.public-session {
+  width: min(100%, 520px);
+  padding: 28px 20px 48px;
+  margin: auto;
+}
+.public-session__brand {
+  font-size: 14px;
+  font-weight: 650;
+  color: #355ca9;
+}
+.public-session h1 {
+  font-size: 24px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  margin: 20px 0 8px;
+}
+.public-session p {
+  color: #626b7a;
+  font-size: 14px;
+}
+.public-session figure {
+  margin: 20px 0;
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+}
+.public-session img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
