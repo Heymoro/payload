@@ -1,0 +1,39 @@
+name: heymoro-local
+services:
+  redis:
+    image: redis@sha256:ff02b58f971e7d7d156a1267e283fcbbeee91773b6aa36c49dac28ecfe28eadf
+    pull_policy: never
+    command:
+      [
+        redis-server,
+        --save,
+        '',
+        --appendonly,
+        'no',
+        --maxmemory,
+        32mb,
+        --maxmemory-policy,
+        noeviction,
+      ]
+    ports: [127.0.0.1:16379:6379]
+    mem_limit: 64m
+    cpus: 0.5
+    pids_limit: 64
+    logging: { driver: json-file, options: { max-size: 5m, max-file: '2' } }
+  minio:
+    image: minio/minio@sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e
+    pull_policy: never
+    command: [server, /data, --address, ':9000']
+    environment:
+      MINIO_ROOT_USER: ${HEYMORO_MINIO_USER:?private local credential required}
+      MINIO_ROOT_PASSWORD: ${HEYMORO_MINIO_PASSWORD:?private local credential required}
+      MINIO_BROWSER: 'off'
+    ports: [127.0.0.1:19000:9000]
+    volumes: [media:/data]
+    mem_limit: 512m
+    cpus: 1
+    pids_limit: 128
+    logging: { driver: json-file, options: { max-size: 5m, max-file: '2' } }
+volumes:
+  media:
+    name: heymoro-local-media

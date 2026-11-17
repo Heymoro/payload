@@ -1,0 +1,102 @@
+[
+  {
+    "source": "test/_community/endpoint-media.ts",
+    "target": "apps/heymoro/src/endpoint-media.ts",
+    "sha256": "7e70bdea34485b5786b41d546dea2d126be20cbec059167b12635153cbb0c651"
+  },
+  {
+    "source": "test/_community/auth-wechatIdentity.ts",
+    "target": "apps/heymoro/src/auth-wechatIdentity.ts",
+    "sha256": "e31fbc0b911261c46c0e31220bd7a390c2105b1c764dacdcc032ea2e33a0bf43"
+  },
+  {
+    "source": "test/_community/service-records.ts",
+    "target": "apps/heymoro/src/service-records.ts",
+    "sha256": "5d3528db9246d636cf35847c925fe07912f949c73279631089df11e93a3148f2"
+  },
+  {
+    "source": "test/_community/endpoint-records.ts",
+    "target": "apps/heymoro/src/endpoint-records.ts",
+    "sha256": "1101bb98fb64bcbc52078db9b919dc9f668d7cf7083e581bec7476b140b368d4"
+  },
+  {
+    "source": "test/_community/auth-crypto.ts",
+    "target": "apps/heymoro/src/auth-crypto.ts",
+    "sha256": "068d7f198375bf9573bddb52ab789d3d8de6d8c6b51cf8b537271c1b9198cd92"
+  },
+  {
+    "source": "test/_community/endpoint-auth.ts",
+    "target": "apps/heymoro/src/endpoint-auth.ts",
+    "sha256": "27a95b66d3ea86a9b78a7b336c24d9b55ecb009ab9eb75009c3eb40d81c48f38"
+  },
+  {
+    "source": "test/_community/contracts.ts",
+    "target": "apps/heymoro/src/contracts.ts",
+    "sha256": "3ca66341fc1bd0a1b272707338b46b095a01f3504bdecf72f52bce16b3ba558e"
+  },
+  {
+    "source": "test/_community/runtime.ts",
+    "target": "apps/heymoro/src/runtime.ts",
+    "sha256": "731858a8feb6dcb72e8ff7be56ac71aec1e6b83f42c04e9af2ff47d73e0047ea"
+  },
+  {
+    "source": "test/_community/auth-session.ts",
+    "target": "apps/heymoro/src/auth-session.ts",
+    "sha256": "c4482a39b1419f5e1fa1054ea6ce7b25f7631b968799539260e06b17d58e4aed"
+  },
+  {
+    "source": "test/_community/auth-principals.ts",
+    "target": "apps/heymoro/src/auth-principals.ts",
+    "sha256": "8fa5bf457bab1195df50bbe63f98e8956d5f56a2943286f6bc0168afdf7ee33f"
+  },
+  {
+    "source": "test/_community/service-audit.ts",
+    "target": "apps/heymoro/src/service-audit.ts",
+    "sha256": "05983abf9360385d17a7361b98c7e109867ebac4373b787e4e3dede6ea881863"
+  },
+  {
+    "source": "test/_community/endpoint-health.ts",
+    "target": "apps/heymoro/src/endpoint-health.ts",
+    "sha256": "94e42b88a207646bec9844f83ee758eda582b1acc88a12f1727e20b1d3551c4b"
+  },
+  {
+    "source": "test/_community/service-media.ts",
+    "target": "apps/heymoro/src/service-media.ts",
+    "sha256": "e94f02a944cc700e4a6f136d4a13f711d6dcd6f27349721208d3225e2c97cc4e"
+  },
+  {
+    "source": "test/_community/collections/WechatIdentities.ts",
+    "target": "apps/heymoro/src/collections/WechatIdentities.ts",
+    "sha256": "805d0835a0072e8fa34d59500f26b844271b565ee1471c63eb8f4f3f94476b5d"
+  },
+  {
+    "source": "test/_community/collections/UserSessions.ts",
+    "target": "apps/heymoro/src/collections/UserSessions.ts",
+    "sha256": "ed2fb19f108a3c458c2ec098fadcd0cf678c11191f7bb00d94fcf7630191c75f"
+  },
+  {
+    "source": "test/_community/collections/AuditLogs.ts",
+    "target": "apps/heymoro/src/collections/AuditLogs.ts",
+    "sha256": "aca0aa45bdd7ddeefb8676f92d3d24e5567326126e37c287c1f6245e61e486bc"
+  },
+  {
+    "source": "test/_community/collections/Admins.ts",
+    "target": "apps/heymoro/src/collections/Admins.ts",
+    "sha256": "d412c747593e87a0b79388091a3f158089b572d1e9fb8856c39e7c4d107a599a"
+  },
+  {
+    "source": "test/_community/collections/Records.ts",
+    "target": "apps/heymoro/src/collections/Records.ts",
+    "sha256": "99a5b54a28d794c4ffc0860e4c58c0975dc69bf9b3cc973aacb5b663a48b707f"
+  },
+  {
+    "source": "test/_community/collections/Users.ts",
+    "target": "apps/heymoro/src/collections/Users.ts",
+    "sha256": "7af81ab6d1400a9f3bd4bbbebc7a64324837d26f37593e3c1d538eb4ddcca1d5"
+  },
+  {
+    "source": "test/_community/collections/Media.ts",
+    "target": "apps/heymoro/src/collections/Media.ts",
+    "sha256": "7732ab3c75daee1a3e19e4e5ac01afcf5b73f14daa78fa0992d2a3fecd647e62"
+  }
+]

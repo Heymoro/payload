@@ -1,0 +1,50 @@
+{
+  "name": "@heymoro/server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "admin:command": "node --import tsx scripts/admin-commands.mjs",
+    "build": "pnpm build:framework-types && HEYMORO_DIST_DIR=.next-build next build --webpack",
+    "build:check": "pnpm typecheck && HEYMORO_DIST_DIR=.next-check next build --webpack --experimental-build-mode compile",
+    "build:framework-types": "tsc -b ../../packages/db-sqlite ../../packages/richtext-lexical ../../packages/transformer-sharp ../../packages/next --stopBuildOnErrors",
+    "core:init": "node --import tsx scripts/init-target.mjs",
+    "dev": "next dev --webpack --hostname 127.0.0.1 --port 3001",
+    "dev:local": "node --import tsx scripts/local-dev.mjs",
+    "generate:importmap": "pnpm payload generate:importmap",
+    "generate:types": "pnpm payload generate:types",
+    "generation:reconcile": "node --import tsx scripts/generation-reconciliation.mjs",
+    "jobs:creation": "node --import tsx scripts/jobs-creation.mjs",
+    "payload": "node --import tsx scripts/payload.mjs",
+    "start": "HEYMORO_DIST_DIR=.next-build next start --hostname 127.0.0.1",
+    "test": "node --import tsx --test tests/*.test.mjs",
+    "typecheck": "pnpm build:framework-types && tsc --noEmit"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "3.1158.0",
+    "@heymoro/ai-engine": "file:../../../ai-engine",
+    "@libsql/client": "0.14.0",
+    "@payloadcms/db-sqlite": "workspace:*",
+    "@payloadcms/next": "workspace:*",
+    "@payloadcms/richtext-lexical": "workspace:*",
+    "@payloadcms/transformer-sharp": "workspace:*",
+    "@payloadcms/ui": "workspace:*",
+    "@smithy/node-http-handler": "4.13.0",
+    "drizzle-orm": "0.45.2",
+    "graphql": "16.8.1",
+    "ioredis": "5.11.1",
+    "jose": "6.2.12",
+    "next": "16.4.2",
+    "payload": "workspace:*",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "sharp": "0.35.5"
+  },
+  "devDependencies": {
+    "@types/node": "24.12.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "tsx": "4.23.15",
+    "typescript": "npm:typescript@7.0.2"
+  }
+}

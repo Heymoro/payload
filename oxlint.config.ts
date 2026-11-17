@@ -81,12 +81,24 @@ export default defineConfig({
         '../__helpers/memory/vitest.js',
         '../int/vitest.js',
         './helpers/mcpFixtures.js',
+        '../../../../test/__helpers/int/vitest.js',
       ],
     },
   },
   overrides: [
     ...payloadConfig.overrides,
     { files: ['test/evals/eval-results/**'], rules: { 'no-restricted-exports': 'off' } },
+    {
+      files: ['apps/heymoro/tests/**'],
+      // Async fixture ports intentionally return fixed values while preserving Promise contracts.
+      rules: {
+        'typescript/require-await': 'off',
+        // Existing fixture helpers and table-driven assertions remain visible as warnings.
+        '@vitest/expect-expect': 'warn',
+        '@vitest/no-conditional-expect': 'warn',
+        '@vitest/valid-expect': 'warn',
+      },
+    },
     // `@lexical/eslint-plugin`'s recommended rules
     { files: ['packages/richtext-lexical/**'], rules: { '@lexical/rules-of-lexical': 'warn' } },
     {

@@ -1,0 +1,41 @@
+{
+  "bindingCommit": "e6422aab8be35af73601e452d40d4a0945fd6bfb",
+  "libsqlCommit": "20147731c4a9d6e942b159f183215e9399fda2c3",
+  "fixCommit": "d9f2f7d88823207556a2b9cfa3d766ef528538c2",
+  "archives": {
+    "libsql.tar.gz": "e75f05688feaeacef561db3c53971c7aa1b735cf57b1120065c0b05374843ad8",
+    "libsql-js.tar.gz": "86f86765d47c1aa4154b95b2aa720e35f4ad00419f12a978c241e7d67b608ce7"
+  },
+  "budget": {
+    "seconds": 1200,
+    "rssMiB": 4096,
+    "addedDiskMiB": 3072,
+    "jobs": 2
+  },
+  "runtimeTouched": false,
+  "nativeSHA256": "9261d6b038b6d70de05bb3deeecf0ff01ce87b0cc56996c909980991fdf82f9e",
+  "rustc": "1.93.0 (254b59607 2026-01-19)",
+  "target": "aarch64-apple-darwin",
+  "deploymentTarget": "13.0",
+  "nativeApi": "N-API 6 / original libsql 0.4.7 exports",
+  "patch": "sqlite3_close_v2 followed by self.raw = null_mut; no dependency upgrade",
+  "redProbe": "assertion failed on original dangling handle",
+  "greenProbe": "same assertion passed after fix",
+  "installName": "@rpath/libsql_js.node",
+  "signing": "ad-hoc, no private signing key",
+  "downloads": {
+    "binding": {
+      "url": "https://api.github.com/repos/tursodatabase/libsql-js/tarball/e6422aab8be35af73601e452d40d4a0945fd6bfb",
+      "sha256": "86f86765d47c1aa4154b95b2aa720e35f4ad00419f12a978c241e7d67b608ce7"
+    },
+    "libsql": {
+      "url": "https://api.github.com/repos/tursodatabase/libsql/tarball/20147731c4a9d6e942b159f183215e9399fda2c3",
+      "sha256": "e75f05688feaeacef561db3c53971c7aa1b735cf57b1120065c0b05374843ad8"
+    },
+    "cmake": {
+      "version": "3.31.6",
+      "url": "https://files.pythonhosted.org/packages/7f/09/516b0d709672bc430eb13278f0316acd34869269447744f5d136daeef689/cmake-3.31.6-py3-none-macosx_10_10_universal2.whl",
+      "sha256": "da9d4fd9abd571fd016ddb27da0428b10277010b23bb21e3678f8b9e96e1686e"
+    }
+  }
+}
