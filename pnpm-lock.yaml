@@ -14,6 +14,7 @@ catalogs:
       version: 4.6.7
 
 overrides:
+  libsql@0.4.7>@libsql/darwin-arm64: file:./apps/heymoro/vendor/libsql/libsql-darwin-arm64-0.4.7-heymoro.1.tgz
   '@heymoro/server>typescript': npm:typescript@7.0.2
   '@types/request>form-data': ^2.5.6
   amazon-cognito-identity-js>js-cookie: ^3.0.7
@@ -257,12 +258,12 @@ importers:
 
   apps/heymoro:
     dependencies:
-      '@heymoro/ai-engine':
-        specifier: file:../../../ai-engine
-        version: file:../ai-engine(@aws-sdk/credential-provider-node@3.972.89)(@smithy/signature-v4@5.7.4)(google-auth-library@9.15.1(supports-color@10.2.2))(undici@7.30.1)(ws@8.22.0(bufferutil@4.1.0))(zod@4.6.7)
       '@aws-sdk/client-s3':
         specifier: 3.1158.0
         version: 3.1158.0
+      '@heymoro/ai-engine':
+        specifier: file:../../../ai-engine
+        version: file:../ai-engine(@aws-sdk/credential-provider-node@3.972.89)(@smithy/signature-v4@5.7.4)(google-auth-library@9.15.1(supports-color@10.2.2))(undici@7.30.1)(ws@8.22.0(bufferutil@4.1.0))(zod@4.6.7)
       '@libsql/client':
         specifier: 0.14.0
         version: 0.14.0(bufferutil@4.1.0)
@@ -5106,6 +5107,10 @@ packages:
       '@guidepup/guidepup': '>=0.33.0'
       '@playwright/test': ^1.57.0
 
+  '@heymoro/ai-engine@file:../ai-engine':
+    resolution: {directory: ../ai-engine, type: directory}
+    engines: {node: '>=24.22.1'}
+
   '@humanfs/core@0.19.2':
     resolution: {integrity: sha512-UhXNm+CFMWcbChXywFwkmhqjs3PRCmcSa/hfBgLIb7oQ5HNb1wS0icWsGtSAUNgefHeI+eBrA8I1fxmbHsGdvA==}
     engines: {node: '>=18.18.0'}
@@ -5594,8 +5599,9 @@ packages:
   '@libsql/core@0.14.0':
     resolution: {integrity: sha512-nhbuXf7GP3PSZgdCY2Ecj8vz187ptHlZQ0VRc751oB2C1W8jQUXKKklvt7t1LJiUTQBVJuadF628eUk+3cRi4Q==}
 
-  '@libsql/darwin-arm64@0.4.7':
-    resolution: {integrity: sha512-yOL742IfWUlUevnI5PdnIT4fryY3LYTdLm56bnY0wXBw7dhFcnjuA7jrH3oSVz2mjZTHujxoITgAE7V6Z+eAbg==}
+  '@libsql/darwin-arm64@file:apps/heymoro/vendor/libsql/libsql-darwin-arm64-0.4.7-heymoro.1.tgz':
+    resolution: {integrity: sha512-9YloqEOkiTsAHvDtWwKf0++ceKVBhTlZca2dwnH1aexxOPye0ERu95pk8c3VF6A9MQog3XsfZG75VQOCrTcbIA==, tarball: file:apps/heymoro/vendor/libsql/libsql-darwin-arm64-0.4.7-heymoro.1.tgz}
+    version: 0.4.7-heymoro.1
     cpu: [arm64]
     os: [darwin]
 
@@ -13101,6 +13107,33 @@ packages:
     resolution: {integrity: sha512-YgBpdJHPyQ2UE5x+hlSXcnejzAvD0b22U2OuAP+8OnlJT+PjWPxtgmGqKKc+RgTM63U9gN0YzrYc71R2WT/hTA==}
     engines: {node: '>=18'}
 
+  openai@7.55.0:
+    resolution: {integrity: sha512-0r4snVSRN46m4wL2vXCW5Xw6CKGPbdNI8t79KZOpe8GKKPmhL8peDXN8YOY/2ipsOVWSfsP/vgkLjTmWB+kMug==}
+    engines: {node: '>=22.0.0'}
+    peerDependencies:
+      '@aws-sdk/credential-provider-node': '>=3.972.0 <4'
+      '@smithy/hash-node': '>=4.3.0 <5'
+      '@smithy/signature-v4': '>=5.4.0 <6'
+      google-auth-library: '>=9.15.1 <12'
+      undici: '>=5 <9'
+      ws: ^8.21.0
+      zod: ^3.25 || ^4.0
+    peerDependenciesMeta:
+      '@aws-sdk/credential-provider-node':
+        optional: true
+      '@smithy/hash-node':
+        optional: true
+      '@smithy/signature-v4':
+        optional: true
+      google-auth-library:
+        optional: true
+      undici:
+        optional: true
+      ws:
+        optional: true
+      zod:
+        optional: true
+
   openapi-fetch@0.15.0:
     resolution: {integrity: sha512-OjQUdi61WO4HYhr9+byCPMj0+bgste/LtSBEcV6FzDdONTs7x0fWn8/ndoYwzqCsKWIxEZwo4FN/TG1c1rI8IQ==}
 
@@ -15561,37 +15594,6 @@ packages:
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
-
-  '@heymoro/ai-engine@file:../ai-engine':
-    resolution: {directory: ../ai-engine, type: directory}
-    engines: {node: '>=24.22.1'}
-
-  openai@7.55.0:
-    resolution: {integrity: sha512-0r4snVSRN46m4wL2vXCW5Xw6CKGPbdNI8t79KZOpe8GKKPmhL8peDXN8YOY/2ipsOVWSfsP/vgkLjTmWB+kMug==}
-    engines: {node: '>=22.0.0'}
-    peerDependencies:
-      '@aws-sdk/credential-provider-node': '>=3.972.0 <4'
-      '@smithy/hash-node': '>=4.3.0 <5'
-      '@smithy/signature-v4': '>=5.4.0 <6'
-      google-auth-library: '>=9.15.1 <12'
-      undici: '>=5 <9'
-      ws: ^8.21.0
-      zod: ^3.25 || ^4.0
-    peerDependenciesMeta:
-      '@aws-sdk/credential-provider-node':
-        optional: true
-      '@smithy/hash-node':
-        optional: true
-      '@smithy/signature-v4':
-        optional: true
-      google-auth-library:
-        optional: true
-      undici:
-        optional: true
-      ws:
-        optional: true
-      zod:
-        optional: true
 
 snapshots:
 
@@ -18216,6 +18218,18 @@ snapshots:
       '@guidepup/guidepup': 0.34.0(supports-color@10.2.2)
       '@playwright/test': 1.63.0
 
+  '@heymoro/ai-engine@file:../ai-engine(@aws-sdk/credential-provider-node@3.972.89)(@smithy/signature-v4@5.7.4)(google-auth-library@9.15.1(supports-color@10.2.2))(undici@7.30.1)(ws@8.22.0(bufferutil@4.1.0))(zod@4.6.7)':
+    dependencies:
+      openai: 7.55.0(@aws-sdk/credential-provider-node@3.972.89)(@smithy/signature-v4@5.7.4)(google-auth-library@9.15.1(supports-color@10.2.2))(undici@7.30.1)(ws@8.22.0(bufferutil@4.1.0))(zod@4.6.7)
+    transitivePeerDependencies:
+      - '@aws-sdk/credential-provider-node'
+      - '@smithy/hash-node'
+      - '@smithy/signature-v4'
+      - google-auth-library
+      - undici
+      - ws
+      - zod
+
   '@humanfs/core@0.19.2':
     dependencies:
       '@humanfs/types': 0.15.0
@@ -18740,7 +18754,7 @@ snapshots:
     dependencies:
       js-base64: 3.9.5
 
-  '@libsql/darwin-arm64@0.4.7':
+  '@libsql/darwin-arm64@file:apps/heymoro/vendor/libsql/libsql-darwin-arm64-0.4.7-heymoro.1.tgz':
     optional: true
 
   '@libsql/darwin-x64@0.4.7':
@@ -26232,7 +26246,7 @@ snapshots:
       '@neon-rs/load': 0.0.4
       detect-libc: 2.0.2
     optionalDependencies:
-      '@libsql/darwin-arm64': 0.4.7
+      '@libsql/darwin-arm64': file:apps/heymoro/vendor/libsql/libsql-darwin-arm64-0.4.7-heymoro.1.tgz
       '@libsql/darwin-x64': 0.4.7
       '@libsql/linux-arm64-gnu': 0.4.7
       '@libsql/linux-arm64-musl': 0.4.7
@@ -27287,6 +27301,15 @@ snapshots:
       define-lazy-prop: 3.0.0
       is-inside-container: 1.0.0
       wsl-utils: 0.1.0
+
+  openai@7.55.0(@aws-sdk/credential-provider-node@3.972.89)(@smithy/signature-v4@5.7.4)(google-auth-library@9.15.1(supports-color@10.2.2))(undici@7.30.1)(ws@8.22.0(bufferutil@4.1.0))(zod@4.6.7):
+    optionalDependencies:
+      '@aws-sdk/credential-provider-node': 3.972.89
+      '@smithy/signature-v4': 5.7.4
+      google-auth-library: 9.15.1(supports-color@10.2.2)
+      undici: 7.30.1
+      ws: 8.22.0(bufferutil@4.1.0)
+      zod: 4.6.7
 
   openapi-fetch@0.15.0:
     dependencies:
@@ -30145,24 +30168,3 @@ snapshots:
   zod@4.6.7: {}
 
   zwitch@2.0.4: {}
-
-  '@heymoro/ai-engine@file:../ai-engine(@aws-sdk/credential-provider-node@3.972.89)(@smithy/signature-v4@5.7.4)(google-auth-library@9.15.1(supports-color@10.2.2))(undici@7.30.1)(ws@8.22.0(bufferutil@4.1.0))(zod@4.6.7)':
-    dependencies:
-      openai: 7.55.0(@aws-sdk/credential-provider-node@3.972.89)(@smithy/signature-v4@5.7.4)(google-auth-library@9.15.1(supports-color@10.2.2))(undici@7.30.1)(ws@8.22.0(bufferutil@4.1.0))(zod@4.6.7)
-    transitivePeerDependencies:
-      - '@aws-sdk/credential-provider-node'
-      - '@smithy/hash-node'
-      - '@smithy/signature-v4'
-      - google-auth-library
-      - undici
-      - ws
-      - zod
-
-  openai@7.55.0(@aws-sdk/credential-provider-node@3.972.89)(@smithy/signature-v4@5.7.4)(google-auth-library@9.15.1(supports-color@10.2.2))(undici@7.30.1)(ws@8.22.0(bufferutil@4.1.0))(zod@4.6.7):
-    optionalDependencies:
-      '@aws-sdk/credential-provider-node': 3.972.89
-      '@smithy/signature-v4': 5.7.4
-      google-auth-library: 9.15.1(supports-color@10.2.2)
-      undici: 7.30.1
-      ws: 8.22.0(bufferutil@4.1.0)
-      zod: 4.6.7
